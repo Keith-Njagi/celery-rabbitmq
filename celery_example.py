@@ -6,8 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['CELERY_BROKER_URL'] = 'amqp://localhost//'
-app.config['CELERY_RESULT_BACKEND'] = 'db+postgresql://keith_njagi:kitgiana@172.17.0.1/my_celery_db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://keith_njagi:kitgiana@172.17.0.1/my_celery_db'
+app.config['CELERY_RESULT_BACKEND'] = 'db+postgresql://username:password@host/database'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@host/database'
 
 celery = make_celery(app)
 db = SQLAlchemy(app)
